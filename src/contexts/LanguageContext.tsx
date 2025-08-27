@@ -36,6 +36,8 @@ const translations = {
     'examples.delivery': 'Доставка еды',
     'examples.deliveryShort': 'Доставка',
     'examples.barbershop': 'Барбершоп',
+    'examples.autorepair': 'Автосервис',
+    'examples.courses': 'Курсы английского',
     
     // Chat Widget
     'chat.placeholder': 'Напишите сообщение...',
@@ -46,10 +48,14 @@ const translations = {
     'chat.title.restaurant': 'AI ChatBot - Ресторан',
     'chat.title.delivery': 'AI ChatBot - Доставка еды',
     'chat.title.barbershop': 'AI ChatBot - Барбершоп',
+    'chat.title.autorepair': 'AI ChatBot - Автосервис',
+    'chat.title.courses': 'AI ChatBot - Курсы английского',
     'chat.welcome.beauty': 'Привет! Я AI помощник салона красоты. Помогу записаться на услуги. На что хотите записаться? 💇‍♀️',
     'chat.welcome.restaurant': 'Добро пожаловать в ресторан "Вкус"! Помогу забронировать столик. На какое время и сколько персон? 🍽️',
     'chat.welcome.delivery': 'Привет! Добро пожаловать в "Быструю Еду"! Что будете заказывать? 🍕',
     'chat.welcome.barbershop': 'Добро пожаловать в барбершоп "Стиль"! На какие услуги хотите записаться? ✂️',
+    'chat.welcome.autorepair': 'Добро пожаловать в автосервис "Мастер"! Какие проблемы с автомобилем нужно решить? 🔧',
+    'chat.welcome.courses': 'Привет! Добро пожаловать в школу английского "SpeakUp"! Помогу выбрать курс и записаться на занятия. 📚',
     
     // Trial Section
     'trial.title': 'Бесплатный пробный период 7 дней',
@@ -119,6 +125,8 @@ const translations = {
     'examples.delivery': 'Food Delivery',
     'examples.deliveryShort': 'Delivery',
     'examples.barbershop': 'Barbershop',
+    'examples.autorepair': 'Auto Repair',
+    'examples.courses': 'English Courses',
     
     // Chat Widget
     'chat.placeholder': 'Type your message...',
@@ -129,10 +137,14 @@ const translations = {
     'chat.title.restaurant': 'AI ChatBot - Restaurant',
     'chat.title.delivery': 'AI ChatBot - Food Delivery',
     'chat.title.barbershop': 'AI ChatBot - Barbershop',
+    'chat.title.autorepair': 'AI ChatBot - Auto Repair',
+    'chat.title.courses': 'AI ChatBot - English Courses',
     'chat.welcome.beauty': 'Hello! I\'m an AI assistant for the beauty salon. I\'ll help you book services. What would you like to book? 💇‍♀️',
     'chat.welcome.restaurant': 'Welcome to "Taste" restaurant! I\'ll help you book a table. What time and how many people? 🍽️',
     'chat.welcome.delivery': 'Hello! Welcome to "Fast Food"! What would you like to order? 🍕',
     'chat.welcome.barbershop': 'Welcome to "Style" barbershop! What services would you like to book? ✂️',
+    'chat.welcome.autorepair': 'Welcome to "Master" auto repair! What car problems need to be solved? 🔧',
+    'chat.welcome.courses': 'Hello! Welcome to "SpeakUp" English school! I\'ll help you choose a course and sign up for classes. 📚',
     
     // Trial Section
     'trial.title': 'Free 7-day trial period',

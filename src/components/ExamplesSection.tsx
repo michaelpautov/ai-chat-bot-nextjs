@@ -12,8 +12,8 @@ interface InternalProcess {
 }
 
 interface ExamplesSectionProps {
-  activeExample: 'beauty' | 'restaurant' | 'delivery' | 'barbershop';
-  setActiveExample: (example: 'beauty' | 'restaurant' | 'delivery' | 'barbershop') => void;
+  activeExample: 'beauty' | 'restaurant' | 'delivery' | 'barbershop' | 'autorepair' | 'courses';
+  setActiveExample: (example: 'beauty' | 'restaurant' | 'delivery' | 'barbershop' | 'autorepair' | 'courses') => void;
   internalProcesses: InternalProcess[];
   onProcessUpdate: (processes: InternalProcess[]) => void;
 }
@@ -26,7 +26,7 @@ export default function ExamplesSection({
 }: ExamplesSectionProps) {
   const { t } = useLanguage();
   
-  const handleExampleChange = (example: 'beauty' | 'restaurant' | 'delivery' | 'barbershop') => {
+  const handleExampleChange = (example: 'beauty' | 'restaurant' | 'delivery' | 'barbershop' | 'autorepair' | 'courses') => {
     setActiveExample(example);
     onProcessUpdate([]);
   };
@@ -81,6 +81,26 @@ export default function ExamplesSection({
               onClick={() => handleExampleChange('barbershop')}
             >
               <i className="fas fa-user-tie mr-1 sm:mr-2"></i>{t('examples.barbershop')}
+            </button>
+            <button
+              className={`px-2 sm:px-4 py-2 rounded-md font-medium transition-all text-sm sm:text-base whitespace-nowrap ${
+                activeExample === 'autorepair'
+                  ? 'bg-white text-indigo-600'
+                  : 'text-gray-600 hover:text-indigo-600'
+              }`}
+              onClick={() => handleExampleChange('autorepair')}
+            >
+              <i className="fas fa-wrench mr-1 sm:mr-2"></i>{t('examples.autorepair')}
+            </button>
+            <button
+              className={`px-2 sm:px-4 py-2 rounded-md font-medium transition-all text-sm sm:text-base whitespace-nowrap ${
+                activeExample === 'courses'
+                  ? 'bg-white text-indigo-600'
+                  : 'text-gray-600 hover:text-indigo-600'
+              }`}
+              onClick={() => handleExampleChange('courses')}
+            >
+              <i className="fas fa-graduation-cap mr-1 sm:mr-2"></i>{t('examples.courses')}
             </button>
           </div>
         </div>

@@ -9,7 +9,7 @@ interface InternalProcess {
 
 interface InternalProcessPanelProps {
   processes: InternalProcess[];
-  businessType: 'beauty' | 'restaurant' | 'delivery' | 'barbershop';
+  businessType: 'beauty' | 'restaurant' | 'delivery' | 'barbershop' | 'autorepair' | 'courses';
 }
 
 export default function InternalProcessPanel({ processes, businessType }: InternalProcessPanelProps) {

@@ -20,7 +20,7 @@ interface InternalProcess {
 }
 
 export default function Home() {
-  const [activeExample, setActiveExample] = useState<'beauty' | 'restaurant' | 'delivery' | 'barbershop'>('beauty');
+  const [activeExample, setActiveExample] = useState<'beauty' | 'restaurant' | 'delivery' | 'barbershop' | 'autorepair' | 'courses'>('beauty');
   const [internalProcesses, setInternalProcesses] = useState<InternalProcess[]>([]);
 
   const handleProcessUpdate = (processes: InternalProcess[]) => {
