@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { LanguageProvider } from '@/contexts/LanguageContext';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import ExamplesSection from '@/components/ExamplesSection';
@@ -27,20 +28,22 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen text-black">
-      <Navigation />
-      <HeroSection />
-            <ExamplesSection 
-        activeExample={activeExample}
-        setActiveExample={setActiveExample}
-        internalProcesses={internalProcesses}
-                onProcessUpdate={handleProcessUpdate}
-              />
-      <IntegrationsSection />
-      <TestimonialsSection />
-      <TrialSection />
-      <HowItWorksSection />
-      <Footer />
-    </div>
+    <LanguageProvider>
+      <div className="bg-gray-50 min-h-screen text-black">
+        <Navigation />
+        <HeroSection />
+        <ExamplesSection 
+          activeExample={activeExample}
+          setActiveExample={setActiveExample}
+          internalProcesses={internalProcesses}
+          onProcessUpdate={handleProcessUpdate}
+        />
+        <IntegrationsSection />
+        <TestimonialsSection />
+        <TrialSection />
+        <HowItWorksSection />
+        <Footer />
+      </div>
+    </LanguageProvider>
   );
 }

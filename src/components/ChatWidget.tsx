@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -21,26 +22,28 @@ interface ChatWidgetProps {
 }
 
 export default function ChatWidget({ businessType, isDemo = false, onProcessUpdate }: ChatWidgetProps) {
+  const { language, t } = useLanguage();
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
-      content: getInitialMessage(businessType)
+      content: t(`chat.welcome.${businessType}`)
     }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [internalProcesses, setInternalProcesses] = useState<InternalProcess[]>([]);
 
-  // Сбрасываем сообщения при изменении типа бизнеса
+  // Сбрасываем сообщения при изменении типа бизнеса или языка
   useEffect(() => {
     setMessages([
       {
         role: 'assistant',
-        content: getInitialMessage(businessType)
+        content: t(`chat.welcome.${businessType}`)
       }
     ]);
     setInternalProcesses([]);
-  }, [businessType]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [businessType, language]);
 
   // Уведомляем родительский компонент об изменениях в процессах
   useEffect(() => {
@@ -124,7 +127,8 @@ export default function ChatWidget({ businessType, isDemo = false, onProcessUpda
         },
         body: JSON.stringify({
           messages: newMessages,
-          businessType
+          businessType,
+          language
         }),
       });
 
@@ -142,7 +146,7 @@ export default function ChatWidget({ businessType, isDemo = false, onProcessUpda
       console.error('Chat error:', error);
       setMessages([...newMessages, { 
         role: 'assistant', 
-        content: 'Извините, произошла ошибка. Попробуйте еще раз.' 
+        content: t('chat.error') || 'Извините, произошла ошибка. Попробуйте еще раз.' 
       }]);
     } finally {
       setIsLoading(false);
@@ -164,7 +168,7 @@ export default function ChatWidget({ businessType, isDemo = false, onProcessUpda
         <div className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
         <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
         <span className="ml-2 text-sm text-gray-500">
-          AI ChatBot {isDemo ? 'Demo' : getBusinessTitle(businessType)}
+          {isDemo ? 'AI ChatBot Demo' : t(`chat.title.${businessType}`)}
         </span>
       </div>
       
@@ -217,7 +221,7 @@ export default function ChatWidget({ businessType, isDemo = false, onProcessUpda
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyPress={handleKeyPress}
-          placeholder="Напишите сообщение..."
+          placeholder={t('chat.placeholder')}
           disabled={isLoading}
           className="flex-1 border border-gray-300 rounded-l-lg px-4 py-2 focus:outline-none focus:border-indigo-600 disabled:opacity-50"
         />
@@ -233,27 +237,7 @@ export default function ChatWidget({ businessType, isDemo = false, onProcessUpda
   );
 }
 
-function getInitialMessage(businessType: string): string {
-  const messages = {
-    beauty: 'Привет! Я AI помощник салона красоты. Помогу записаться на услуги. На что хотите записаться? 💇‍♀️',
-    restaurant: 'Добро пожаловать в ресторан "Вкус"! Помогу забронировать столик. На какое время и сколько персон? 🍽️',
-    delivery: 'Привет! Добро пожаловать в "Быструю Еду"! Что будете заказывать? 🍕',
-    barbershop: 'Добро пожаловать в барбершоп "Стиль"! На какие услуги хотите записаться? ✂️'
-  };
-  
-  return messages[businessType as keyof typeof messages] || messages.beauty;
-}
 
-function getBusinessTitle(businessType: string): string {
-  const titles = {
-    beauty: '- Салон красоты',
-    restaurant: '- Ресторан',
-    delivery: '- Доставка еды', 
-    barbershop: '- Барбершоп'
-  };
-  
-  return titles[businessType as keyof typeof titles] || '';
-}
 
 function getProcessTemplates(businessType: string, userMessage: string): { description: string }[] {
   const lowerMessage = userMessage.toLowerCase();
