@@ -1,36 +1,168 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI ChatBot - Лендинг с интеграцией OpenAI
 
-## Getting Started
+Современный лендинг для AI чат-бота с интерактивными примерами и интеграцией OpenAI API.
 
-First, run the development server:
+## 🚀 Функции
 
+- **Интерактивные чат-виджеты** с реальным AI (OpenAI GPT-3.5-turbo)
+- **4 типа бизнеса**: Салон красоты, Ресторан, Доставка еды, Барбершоп
+- **Разные роли бота** для каждого типа бизнеса
+- **Адаптивный дизайн** с Tailwind CSS
+- **TypeScript** для типизации
+- **Next.js 14** с App Router
+
+## 🛠️ Установка
+
+1. **Клонируйте проект:**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd ai-chat-bot-nextjs
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Установите зависимости:**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Настройте переменные окружения:**
+```bash
+# Скопируйте .env.local и добавьте свой OpenAI API ключ
+cp .env.local.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Отредактируйте `.env.local`:
+```env
+OPENAI_API_KEY=your_openai_api_key_here
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+```
 
-## Learn More
+4. **Запустите проект:**
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Откройте [http://localhost:3000](http://localhost:3000)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🤖 Настройка OpenAI
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Получение API ключа:
 
-## Deploy on Vercel
+1. Зарегистрируйтесь на [platform.openai.com](https://platform.openai.com)
+2. Перейдите в раздел "API Keys"
+3. Создайте новый ключ
+4. Добавьте ключ в `.env.local`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Роли ботов:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Каждый тип бизнеса имеет свою роль в `src/app/api/chat/route.ts`:
+
+- **Салон красоты** - помогает записаться к мастеру
+- **Ресторан** - бронирует столики
+- **Доставка еды** - принимает заказы
+- **Барбершоп** - записывает к барберу
+
+## 📁 Структура проекта
+
+```
+src/
+├── app/
+│   ├── api/chat/          # OpenAI API роут
+│   ├── layout.tsx         # Основной layout
+│   └── page.tsx          # Главная страница
+├── components/
+│   └── ChatWidget.tsx    # Компонент чата
+└── ...
+```
+
+## 🎨 Кастомизация
+
+### Изменение ролей бота:
+
+Отредактируйте `SYSTEM_PROMPTS` в `src/app/api/chat/route.ts`
+
+### Изменение дизайна:
+
+Все стили используют Tailwind CSS. Основные цвета:
+- Primary: `indigo-600`
+- Secondary: `purple-600`
+
+### Добавление новых типов бизнеса:
+
+1. Добавьте новый промпт в `SYSTEM_PROMPTS`
+2. Обновите типы в `ChatWidget.tsx`
+3. Добавьте новую кнопку в `page.tsx`
+
+## 🚀 Деплой
+
+### Vercel (рекомендуется):
+
+```bash
+npm run build
+vercel --prod
+```
+
+### Другие платформы:
+
+```bash
+npm run build
+npm start
+```
+
+## 📝 API Endpoints
+
+### POST `/api/chat`
+
+Отправляет сообщения в OpenAI и возвращает ответ бота.
+
+**Body:**
+```json
+{
+  "messages": [
+    {"role": "user", "content": "Привет!"}
+  ],
+  "businessType": "beauty"
+}
+```
+
+**Response:**
+```json
+{
+  "message": "Привет! Я AI помощник салона красоты..."
+}
+```
+
+## 🔧 Разработка
+
+```bash
+# Запуск в dev режиме
+npm run dev
+
+# Сборка
+npm run build
+
+# Линтер
+npm run lint
+
+# Проверка типов
+npm run type-check
+```
+
+## 📦 Зависимости
+
+- **Next.js 14** - React фреймворк
+- **OpenAI** - API для чат-бота
+- **Tailwind CSS** - Стили
+- **TypeScript** - Типизация
+- **Font Awesome** - Иконки
+
+## 🤝 Поддержка
+
+Если есть вопросы или проблемы:
+
+1. Проверьте, что OpenAI API ключ корректный
+2. Убедитесь, что у вас есть кредиты на OpenAI аккаунте
+3. Проверьте консоль браузера на ошибки
+
+## 📄 Лицензия
+
+MIT License
