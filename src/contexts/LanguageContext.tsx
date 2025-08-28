@@ -95,12 +95,133 @@ const translations = {
     'testimonials.stats.growth': 'Средний рост продаж',
     'testimonials.stats.support': 'Поддержка клиентов',
     
+    // Testimonials data
+    'testimonials.anna.name': 'Анна Петрова',
+    'testimonials.anna.business': 'Салон красоты «Элегант»',
+    'testimonials.anna.text': 'AI бот увеличил нашу конверсию на 40%! Клиенты записываются даже ночью, а бот автоматически отвечает на все вопросы о процедурах и ценах.',
+    'testimonials.anna.result': '+40% конверсия',
+    
+    'testimonials.dmitry.name': 'Дмитрий Козлов',
+    'testimonials.dmitry.business': 'Ресторан «Итальянский дворик»',
+    'testimonials.dmitry.text': 'Забыли про потерянные заказы! Бот принимает заказы на доставку, отвечает на вопросы о меню и даже предлагает дополнительные блюда.',
+    'testimonials.dmitry.result': '+25% заказов',
+    
+    'testimonials.elena.name': 'Елена Смирнова',
+    'testimonials.elena.business': 'Барбершоп «Джентльмен»',
+    'testimonials.elena.text': 'Клиенты в восторге от быстрых ответов! Бот помогает записаться, напоминает о визитах и рассказывает о наших услугах. Экономим 3 часа в день.',
+    'testimonials.elena.result': '-3 часа работы администратора',
+    
+    'testimonials.mikhail.name': 'Михаил Волков',
+    'testimonials.mikhail.business': 'Доставка еды «Быстро&Вкусно»',
+    'testimonials.mikhail.text': 'Автоматизировали 80% обращений клиентов. Бот отслеживает заказы, отвечает на вопросы о доставке и помогает с оформлением.',
+    'testimonials.mikhail.result': '80% автоматизация',
+    
+    'testimonials.olga.name': 'Ольга Иванова',
+    'testimonials.olga.business': 'Фитнес-центр «Энергия»',
+    'testimonials.olga.text': 'Записи на тренировки теперь идут автоматически. Бот консультирует по программам, расписанию и ценам. Освободили время тренеров.',
+    'testimonials.olga.result': '+60% записей',
+    
+    'testimonials.artem.name': 'Артем Соколов',
+    'testimonials.artem.business': 'Автосервис «Мастер»',
+    'testimonials.artem.text': 'Клиенты могут записаться на диагностику и узнать стоимость услуг в любое время. Бот даже объясняет, что включено в каждый вид ремонта.',
+    'testimonials.artem.result': '+50% заявок',
+    
     // Integrations
     'integrations.title': 'Интеграции с популярными системами',
     'integrations.subtitle': 'Подключаем к вашим CRM и мессенджерам за несколько минут',
+    'integrations.crm.title': 'CRM системы',
+    'integrations.messengers.title': 'Мессенджеры',
+    'integrations.crm.altegio.description': 'Для салонов красоты',
+    'integrations.crm.amocrm.description': 'Универсальная CRM',
+    'integrations.crm.bitrix.description': 'Для бизнеса',
+    'integrations.crm.moysklad.description': 'Учет и продажи',
+    'integrations.crm.retailcrm.description': 'Для ритейла',
+    'integrations.crm.other.title': 'Другие',
+    'integrations.crm.other.description': 'По запросу',
+    'integrations.messengers.whatsapp.description': 'Personal & Business',
+    'integrations.messengers.telegram.description': 'Боты и каналы',
+    'integrations.messengers.instagram.description': 'Direct Messages',
+    'integrations.messengers.website.title': 'Веб-сайт',
+    'integrations.messengers.website.description': 'Виджет на сайт',
     
     // Footer
-    'footer.rights': 'Все права защищены'
+    'footer.rights': 'Все права защищены',
+    
+    // Contact Section
+    'contact.title': 'Готовы попробовать?',
+    'contact.subtitle': 'Запустите AI бота для вашего бизнеса уже сегодня',
+    'contact.startFree': 'Начать бесплатно',
+    'contact.contactUs': 'Связаться с нами',
+    
+    // Chat Widget Internal Processes
+    'chat.process.analyzing': '🔍 Анализ запроса клиента',
+    'chat.process.crm': '📊 Запрос данных из CRM о свободных мастерах',
+    'chat.process.schedule': '⏰ Проверка расписания на ближайшие дни',
+    'chat.process.prices': '💰 Получение актуальных цен на услуги',
+    'chat.process.findTime': '📅 Поиск оптимального времени записи',
+    'chat.process.proposal': '✅ Формирование предложения для клиента',
+    
+    // Barbershop processes
+    'chat.process.barbershop.analyzing': '🔍 Обработка запроса на услуги барбершопа',
+    'chat.process.barbershop.barbers': '👨‍💼 Запрос списка доступных барберов',
+    'chat.process.barbershop.schedule': '⏰ Проверка свободных слотов в расписании',
+    'chat.process.barbershop.services': '✂️ Получение информации о типах стрижек',
+    'chat.process.barbershop.prices': '💵 Расчет стоимости услуг',
+    'chat.process.barbershop.booking': '📝 Подготовка вариантов записи',
+    
+    // Restaurant processes
+    'chat.process.restaurant.analyzing': '🍽️ Анализ запроса на бронирование',
+    'chat.process.restaurant.load': '🏪 Проверка загруженности ресторана',
+    'chat.process.restaurant.tables': '🪑 Поиск свободных столиков',
+    'chat.process.restaurant.menu': '📋 Проверка актуального меню',
+    'chat.process.restaurant.special': '🎉 Учет особых пожеланий (банкет, день рождения)',
+    'chat.process.restaurant.booking': '📞 Подготовка предложения по бронированию',
+    
+    // Delivery processes
+    'chat.process.delivery.analyzing': '🍕 Обработка заказа на доставку',
+    'chat.process.delivery.availability': '📦 Проверка наличия блюд в меню',
+    'chat.process.delivery.time': '🏠 Расчет времени доставки по адресу',
+    'chat.process.delivery.payment': '💳 Обработка способа оплаты',
+    'chat.process.delivery.courier': '🛵 Поиск свободного курьера',
+    'chat.process.delivery.order': '📱 Формирование итогового заказа',
+    
+    // Auto repair processes
+    'chat.process.autorepair.analyzing': '🔧 Анализ проблемы с автомобилем',
+    'chat.process.autorepair.model': '🚗 Определение модели и года выпуска',
+    'chat.process.autorepair.parts': '📋 Проверка наличия запчастей на складе',
+    'chat.process.autorepair.master': '👨‍🔧 Поиск свободного мастера',
+    'chat.process.autorepair.cost': '💰 Расчет стоимости работ и запчастей',
+    'chat.process.autorepair.booking': '📅 Поиск оптимального времени для записи',
+    
+    // Courses processes
+    'chat.process.courses.analyzing': '📚 Определение уровня английского языка',
+    'chat.process.courses.goals': '🎯 Анализ целей изучения языка',
+    'chat.process.courses.teacher': '👩‍🏫 Поиск подходящего преподавателя',
+    'chat.process.courses.schedule': '📅 Проверка расписания групп',
+    'chat.process.courses.cost': '💳 Расчет стоимости курса',
+    'chat.process.courses.proposal': '✅ Формирование предложения по обучению',
+    
+    // Additional processes
+    'chat.process.discounts': '💰 Дополнительный расчет скидок и акций',
+    'chat.process.urgent': '⚡ Поиск экстренных слотов',
+    
+    // Final messages
+    'chat.final.beauty': '🎉 Клиент успешно записан в салон красоты!',
+    'chat.final.barbershop': '🎉 Клиент успешно записан в барбершоп!',
+    'chat.final.restaurant': '🎉 Столик успешно забронирован в ресторане!',
+    'chat.final.delivery': '🎉 Заказ принят и передан на кухню!',
+    'chat.final.autorepair': '🎉 Клиент записан на ремонт автомобиля!',
+    'chat.final.courses': '🎉 Клиент записан на курсы английского языка!',
+    
+    // Demo header
+    'chat.demo': 'AI ChatBot Demo',
+    
+    // Internal Process Panel
+    'internalProcess.title': 'Внутренние процессы',
+    'internalProcess.noProcesses': 'Внутренние процессы появятся после отправки сообщения',
+    'internalProcess.totalProcesses': 'Всего процессов',
+    'internalProcess.completed': 'Завершено',
+
   },
   en: {
     // Navigation
@@ -184,12 +305,133 @@ const translations = {
     'testimonials.stats.growth': 'Average sales growth', 
     'testimonials.stats.support': 'Customer support',
     
+    // Testimonials data
+    'testimonials.anna.name': 'Anna Petrova',
+    'testimonials.anna.business': 'Elegant Beauty Salon',
+    'testimonials.anna.text': 'AI bot increased our conversion by 40%! Clients book appointments even at night, and the bot automatically answers all questions about procedures and prices.',
+    'testimonials.anna.result': '+40% conversion',
+    
+    'testimonials.dmitry.name': 'Dmitry Kozlov',
+    'testimonials.dmitry.business': 'Italian Courtyard Restaurant',
+    'testimonials.dmitry.text': 'No more lost orders! The bot takes delivery orders, answers menu questions and even suggests additional dishes.',
+    'testimonials.dmitry.result': '+25% orders',
+    
+    'testimonials.elena.name': 'Elena Smirnova',
+    'testimonials.elena.business': 'Gentleman Barbershop',
+    'testimonials.elena.text': 'Clients love the quick responses! The bot helps book appointments, reminds about visits and tells about our services. We save 3 hours a day.',
+    'testimonials.elena.result': '-3 hours admin work',
+    
+    'testimonials.mikhail.name': 'Mikhail Volkov',
+    'testimonials.mikhail.business': 'Fast&Tasty Food Delivery',
+    'testimonials.mikhail.text': 'Automated 80% of customer inquiries. The bot tracks orders, answers delivery questions and helps with checkout.',
+    'testimonials.mikhail.result': '80% automation',
+    
+    'testimonials.olga.name': 'Olga Ivanova',
+    'testimonials.olga.business': 'Energy Fitness Center',
+    'testimonials.olga.text': 'Workout bookings are now automatic. The bot advises on programs, schedules and prices. Freed up trainers\' time.',
+    'testimonials.olga.result': '+60% bookings',
+    
+    'testimonials.artem.name': 'Artem Sokolov',
+    'testimonials.artem.business': 'Master Auto Service',
+    'testimonials.artem.text': 'Clients can book diagnostics and learn service costs anytime. The bot even explains what\'s included in each type of repair.',
+    'testimonials.artem.result': '+50% requests',
+    
     // Integrations
     'integrations.title': 'Integrations with popular systems',
     'integrations.subtitle': 'Connect to your CRM and messengers in minutes',
+    'integrations.crm.title': 'CRM Systems',
+    'integrations.messengers.title': 'Messengers',
+    'integrations.crm.altegio.description': 'For beauty salons',
+    'integrations.crm.amocrm.description': 'Universal CRM',
+    'integrations.crm.bitrix.description': 'For business',
+    'integrations.crm.moysklad.description': 'Inventory & sales',
+    'integrations.crm.retailcrm.description': 'For retail',
+    'integrations.crm.other.title': 'Others',
+    'integrations.crm.other.description': 'On request',
+    'integrations.messengers.whatsapp.description': 'Personal & Business',
+    'integrations.messengers.telegram.description': 'Bots & channels',
+    'integrations.messengers.instagram.description': 'Direct Messages',
+    'integrations.messengers.website.title': 'Website',
+    'integrations.messengers.website.description': 'Website widget',
     
     // Footer
-    'footer.rights': 'All rights reserved'
+    'footer.rights': 'All rights reserved',
+    
+    // Contact Section
+    'contact.title': 'Ready to try?',
+    'contact.subtitle': 'Launch AI bot for your business today',
+    'contact.startFree': 'Start for free',
+    'contact.contactUs': 'Contact us',
+    
+    // Chat Widget Internal Processes
+    'chat.process.analyzing': '🔍 Analyzing client request',
+    'chat.process.crm': '📊 Querying CRM for available specialists',
+    'chat.process.schedule': '⏰ Checking schedule for upcoming days',
+    'chat.process.prices': '💰 Getting current service prices',
+    'chat.process.findTime': '📅 Finding optimal booking time',
+    'chat.process.proposal': '✅ Forming client proposal',
+    
+    // Barbershop processes
+    'chat.process.barbershop.analyzing': '🔍 Processing barbershop service request',
+    'chat.process.barbershop.barbers': '👨‍💼 Requesting list of available barbers',
+    'chat.process.barbershop.schedule': '⏰ Checking available time slots',
+    'chat.process.barbershop.services': '✂️ Getting haircut types information',
+    'chat.process.barbershop.prices': '💵 Calculating service costs',
+    'chat.process.barbershop.booking': '📝 Preparing booking options',
+    
+    // Restaurant processes
+    'chat.process.restaurant.analyzing': '🍽️ Analyzing reservation request',
+    'chat.process.restaurant.load': '🏪 Checking restaurant capacity',
+    'chat.process.restaurant.tables': '🪑 Finding available tables',
+    'chat.process.restaurant.menu': '📋 Checking current menu',
+    'chat.process.restaurant.special': '🎉 Considering special requests (banquet, birthday)',
+    'chat.process.restaurant.booking': '📞 Preparing reservation proposal',
+    
+    // Delivery processes
+    'chat.process.delivery.analyzing': '🍕 Processing delivery order',
+    'chat.process.delivery.availability': '📦 Checking dish availability in menu',
+    'chat.process.delivery.time': '🏠 Calculating delivery time by address',
+    'chat.process.delivery.payment': '💳 Processing payment method',
+    'chat.process.delivery.courier': '🛵 Finding available courier',
+    'chat.process.delivery.order': '📱 Forming final order',
+    
+    // Auto repair processes
+    'chat.process.autorepair.analyzing': '🔧 Analyzing car problem',
+    'chat.process.autorepair.model': '🚗 Determining model and year',
+    'chat.process.autorepair.parts': '📋 Checking parts availability in stock',
+    'chat.process.autorepair.master': '👨‍🔧 Finding available mechanic',
+    'chat.process.autorepair.cost': '💰 Calculating work and parts cost',
+    'chat.process.autorepair.booking': '📅 Finding optimal appointment time',
+    
+    // Courses processes
+    'chat.process.courses.analyzing': '📚 Determining English level',
+    'chat.process.courses.goals': '🎯 Analyzing language learning goals',
+    'chat.process.courses.teacher': '👩‍🏫 Finding suitable teacher',
+    'chat.process.courses.schedule': '📅 Checking group schedules',
+    'chat.process.courses.cost': '💳 Calculating course cost',
+    'chat.process.courses.proposal': '✅ Forming learning proposal',
+    
+    // Additional processes
+    'chat.process.discounts': '💰 Additional discount and promotion calculation',
+    'chat.process.urgent': '⚡ Finding emergency slots',
+    
+    // Final messages
+    'chat.final.beauty': '🎉 Client successfully booked at beauty salon!',
+    'chat.final.barbershop': '🎉 Client successfully booked at barbershop!',
+    'chat.final.restaurant': '🎉 Table successfully reserved at restaurant!',
+    'chat.final.delivery': '🎉 Order accepted and sent to kitchen!',
+    'chat.final.autorepair': '🎉 Client booked for car repair!',
+    'chat.final.courses': '🎉 Client enrolled in English courses!',
+    
+    // Demo header
+    'chat.demo': 'AI ChatBot Demo',
+    
+    // Internal Process Panel
+    'internalProcess.title': 'Internal Processes',
+    'internalProcess.noProcesses': 'Internal processes will appear after sending a message',
+    'internalProcess.totalProcesses': 'Total processes',
+    'internalProcess.completed': 'Completed',
+
   }
 };
 

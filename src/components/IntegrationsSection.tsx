@@ -17,7 +17,7 @@ export default function IntegrationsSection() {
           <div>
             <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-4 md:mb-6 text-center">
               <i className="fas fa-database text-indigo-600 mr-2 md:mr-3"></i>
-              CRM системы
+              {t('integrations.crm.title')}
             </h3>
             <div className="grid grid-cols-2 gap-3 md:gap-4">
               <div className="bg-white p-3 md:p-4 rounded-lg shadow-sm border hover:shadow-md transition-shadow">
@@ -26,7 +26,7 @@ export default function IntegrationsSection() {
                     <i className="fas fa-cut text-blue-600 text-lg md:text-xl"></i>
                   </div>
                   <h4 className="font-semibold text-gray-900 text-sm md:text-base">Altegio</h4>
-                  <p className="text-xs md:text-sm text-gray-600">Для салонов красоты</p>
+                  <p className="text-xs md:text-sm text-gray-600">{t('integrations.crm.altegio.description')}</p>
                 </div>
               </div>
               
@@ -36,7 +36,7 @@ export default function IntegrationsSection() {
                     <i className="fas fa-handshake text-orange-600 text-lg md:text-xl"></i>
                   </div>
                   <h4 className="font-semibold text-gray-900 text-sm md:text-base">amoCRM</h4>
-                  <p className="text-xs md:text-sm text-gray-600">Универсальная CRM</p>
+                  <p className="text-xs md:text-sm text-gray-600">{t('integrations.crm.amocrm.description')}</p>
                 </div>
               </div>
               
@@ -46,7 +46,7 @@ export default function IntegrationsSection() {
                     <i className="fas fa-briefcase text-blue-600 text-lg md:text-xl"></i>
                   </div>
                   <h4 className="font-semibold text-gray-900 text-sm md:text-base">Bitrix24</h4>
-                  <p className="text-xs md:text-sm text-gray-600">Для бизнеса</p>
+                  <p className="text-xs md:text-sm text-gray-600">{t('integrations.crm.bitrix.description')}</p>
                 </div>
               </div>
               
@@ -56,7 +56,7 @@ export default function IntegrationsSection() {
                     <i className="fas fa-chart-line text-green-600 text-lg md:text-xl"></i>
                   </div>
                   <h4 className="font-semibold text-gray-900 text-sm md:text-base">МойСклад</h4>
-                  <p className="text-xs md:text-sm text-gray-600">Учет и продажи</p>
+                  <p className="text-xs md:text-sm text-gray-600">{t('integrations.crm.moysklad.description')}</p>
                 </div>
               </div>
               
@@ -66,7 +66,7 @@ export default function IntegrationsSection() {
                     <i className="fas fa-store text-purple-600 text-lg md:text-xl"></i>
                   </div>
                   <h4 className="font-semibold text-gray-900 text-sm md:text-base">RetailCRM</h4>
-                  <p className="text-xs md:text-sm text-gray-600">Для ритейла</p>
+                  <p className="text-xs md:text-sm text-gray-600">{t('integrations.crm.retailcrm.description')}</p>
                 </div>
               </div>
               
@@ -75,8 +75,8 @@ export default function IntegrationsSection() {
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-red-100 rounded-lg flex items-center justify-center mx-auto mb-2 md:mb-3">
                     <i className="fas fa-plus text-red-600 text-lg md:text-xl"></i>
                   </div>
-                  <h4 className="font-semibold text-gray-900 text-sm md:text-base">Другие</h4>
-                  <p className="text-xs md:text-sm text-gray-600">По запросу</p>
+                  <h4 className="font-semibold text-gray-900 text-sm md:text-base">{t('integrations.crm.other.title')}</h4>
+                  <p className="text-xs md:text-sm text-gray-600">{t('integrations.crm.other.description')}</p>
                 </div>
               </div>
             </div>
@@ -86,7 +86,7 @@ export default function IntegrationsSection() {
           <div>
             <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-4 md:mb-6 text-center">
               <i className="fas fa-comments text-green-600 mr-2 md:mr-3"></i>
-              Мессенджеры
+              {t('integrations.messengers.title')}
             </h3>
             <div className="grid grid-cols-2 gap-3 md:gap-4">
               <div className="bg-white p-3 md:p-4 rounded-lg shadow-sm border hover:shadow-md transition-shadow">
@@ -95,7 +95,7 @@ export default function IntegrationsSection() {
                     <i className="fab fa-whatsapp text-green-600 text-lg md:text-xl"></i>
                   </div>
                   <h4 className="font-semibold text-gray-900 text-sm md:text-base">WhatsApp</h4>
-                  <p className="text-xs md:text-sm text-gray-600">Personal & Business</p>
+                  <p className="text-xs md:text-sm text-gray-600">{t('integrations.messengers.whatsapp.description')}</p>
                 </div>
               </div>
               
@@ -105,7 +105,7 @@ export default function IntegrationsSection() {
                     <i className="fab fa-telegram text-blue-600 text-lg md:text-xl"></i>
                   </div>
                   <h4 className="font-semibold text-gray-900 text-sm md:text-base">Telegram</h4>
-                  <p className="text-xs md:text-sm text-gray-600">Боты и каналы</p>
+                  <p className="text-xs md:text-sm text-gray-600">{t('integrations.messengers.telegram.description')}</p>
                 </div>
               </div>
               
@@ -115,7 +115,7 @@ export default function IntegrationsSection() {
                     <i className="fab fa-instagram text-pink-600 text-lg md:text-xl"></i>
                   </div>
                   <h4 className="font-semibold text-gray-900 text-sm md:text-base">Instagram</h4>
-                  <p className="text-xs md:text-sm text-gray-600">Direct Messages</p>
+                  <p className="text-xs md:text-sm text-gray-600">{t('integrations.messengers.instagram.description')}</p>
                 </div>
               </div>
               
@@ -124,8 +124,8 @@ export default function IntegrationsSection() {
                   <div className="w-10 h-10 md:w-12 md:h-12 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-2 md:mb-3">
                     <i className="fas fa-globe text-gray-600 text-lg md:text-xl"></i>
                   </div>
-                  <h4 className="font-semibold text-gray-900 text-sm md:text-base">Веб-сайт</h4>
-                  <p className="text-xs md:text-sm text-gray-600">Виджет на сайт</p>
+                  <h4 className="font-semibold text-gray-900 text-sm md:text-base">{t('integrations.messengers.website.title')}</h4>
+                  <p className="text-xs md:text-sm text-gray-600">{t('integrations.messengers.website.description')}</p>
                 </div>
               </div>
             </div>

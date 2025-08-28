@@ -1,5 +1,7 @@
 'use client';
 
+import { useLanguage } from '@/contexts/LanguageContext';
+
 interface InternalProcess {
   id: string;
   description: string;
@@ -13,6 +15,7 @@ interface InternalProcessPanelProps {
 }
 
 export default function InternalProcessPanel({ processes, businessType }: InternalProcessPanelProps) {
+  const { t } = useLanguage();
   const getStatusIcon = (status: InternalProcess['status']) => {
     switch (status) {
       case 'pending':
@@ -29,13 +32,16 @@ export default function InternalProcessPanel({ processes, businessType }: Intern
   };
 
   const getBusinessTitle = (businessType: string): string => {
-    const titles = {
-      beauty: 'Салон красоты',
-      restaurant: 'Ресторан',
-      delivery: 'Доставка еды',
-      barbershop: 'Барбершоп'
+    const titleKeys = {
+      beauty: 'examples.beauty',
+      restaurant: 'examples.restaurant',
+      delivery: 'examples.delivery',
+      barbershop: 'examples.barbershop',
+      autorepair: 'examples.autorepair',
+      courses: 'examples.courses'
     };
-    return titles[businessType as keyof typeof titles] || 'Бизнес';
+    const key = titleKeys[businessType as keyof typeof titleKeys];
+    return key ? t(key) : businessType;
   };
 
   return (
@@ -46,7 +52,7 @@ export default function InternalProcessPanel({ processes, businessType }: Intern
         <div className="w-3 h-3 bg-purple-500 rounded-full mr-2"></div>
         <div className="w-3 h-3 bg-pink-500 rounded-full mr-2"></div>
         <span className="ml-2 text-sm text-gray-500">
-          Внутренние процессы - {getBusinessTitle(businessType)}
+          {t('internalProcess.title')} - {getBusinessTitle(businessType)}
         </span>
       </div>
 
@@ -58,7 +64,7 @@ export default function InternalProcessPanel({ processes, businessType }: Intern
               <i className="fas fa-cogs text-3xl"></i>
             </div>
             <p className="text-gray-500 text-sm">
-              Внутренние процессы появятся после отправки сообщения
+              {t('internalProcess.noProcesses')}
             </p>
           </div>
         ) : (
@@ -116,9 +122,9 @@ export default function InternalProcessPanel({ processes, businessType }: Intern
       {processes.length > 0 && (
         <div className="mt-4 pt-4 border-t border-gray-200 flex-shrink-0">
           <div className="flex justify-between text-xs text-gray-500">
-            <span>Всего процессов: {processes.length}</span>
+            <span>{t('internalProcess.totalProcesses')}: {processes.length}</span>
             <span>
-              Завершено: {processes.filter(p => p.status === 'completed').length}
+              {t('internalProcess.completed')}: {processes.filter(p => p.status === 'completed').length}
             </span>
           </div>
         </div>

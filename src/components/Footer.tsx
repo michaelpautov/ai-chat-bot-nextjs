@@ -1,4 +1,10 @@
+'use client';
+
+import { useLanguage } from '@/contexts/LanguageContext';
+
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-gray-900 text-white py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -8,7 +14,7 @@ export default function Footer() {
             <span className="font-bold">AI ChatBot</span>
           </div>
           <div className="text-sm text-gray-400">
-            © 2024 AI ChatBot. Все права защищены.
+            © 2024 AI ChatBot. {t('footer.rights')}
           </div>
         </div>
       </div>

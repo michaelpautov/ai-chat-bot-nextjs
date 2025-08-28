@@ -53,7 +53,7 @@ export default function ChatWidget({ businessType, isDemo = false, onProcessUpda
   }, [internalProcesses, onProcessUpdate]);
 
   const simulateInternalProcesses = (userMessage: string) => {
-    const processTemplates = getProcessTemplates(businessType, userMessage);
+    const processTemplates = getProcessTemplates(businessType, userMessage, t);
     const newProcesses: InternalProcess[] = [];
 
     processTemplates.forEach((template, index) => {
@@ -98,7 +98,7 @@ export default function ChatWidget({ businessType, isDemo = false, onProcessUpda
       setTimeout(() => {
         const finalProcess: InternalProcess = {
           id: `${Date.now()}-final`,
-          description: getFinalMessage(businessType),
+          description: getFinalMessage(businessType, t),
           status: 'completed',
           timestamp: new Date()
         };
@@ -168,7 +168,7 @@ export default function ChatWidget({ businessType, isDemo = false, onProcessUpda
         <div className="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
         <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
         <span className="ml-2 text-sm text-gray-500">
-          {isDemo ? 'AI ChatBot Demo' : t(`chat.title.${businessType}`)}
+          {isDemo ? t('chat.demo') : t(`chat.title.${businessType}`)}
         </span>
       </div>
       
@@ -239,57 +239,57 @@ export default function ChatWidget({ businessType, isDemo = false, onProcessUpda
 
 
 
-function getProcessTemplates(businessType: string, userMessage: string): { description: string }[] {
+function getProcessTemplates(businessType: string, userMessage: string, t: (key: string) => string): { description: string }[] {
   const lowerMessage = userMessage.toLowerCase();
   
   const processMap = {
     beauty: [
-      { description: '🔍 Анализ запроса клиента' },
-      { description: '📊 Запрос данных из CRM о свободных мастерах' },
-      { description: '⏰ Проверка расписания на ближайшие дни' },
-      { description: '💰 Получение актуальных цен на услуги' },
-      { description: '📅 Поиск оптимального времени записи' },
-      { description: '✅ Формирование предложения для клиента' }
+      { description: t('chat.process.analyzing') },
+      { description: t('chat.process.crm') },
+      { description: t('chat.process.schedule') },
+      { description: t('chat.process.prices') },
+      { description: t('chat.process.findTime') },
+      { description: t('chat.process.proposal') }
     ],
     barbershop: [
-      { description: '🔍 Обработка запроса на услуги барбершопа' },
-      { description: '👨‍💼 Запрос списка доступных барберов' },
-      { description: '⏰ Проверка свободных слотов в расписании' },
-      { description: '✂️ Получение информации о типах стрижек' },
-      { description: '💵 Расчет стоимости услуг' },
-      { description: '📝 Подготовка вариантов записи' }
+      { description: t('chat.process.barbershop.analyzing') },
+      { description: t('chat.process.barbershop.barbers') },
+      { description: t('chat.process.barbershop.schedule') },
+      { description: t('chat.process.barbershop.services') },
+      { description: t('chat.process.barbershop.prices') },
+      { description: t('chat.process.barbershop.booking') }
     ],
     restaurant: [
-      { description: '🍽️ Анализ запроса на бронирование' },
-      { description: '🏪 Проверка загруженности ресторана' },
-      { description: '🪑 Поиск свободных столиков' },
-      { description: '📋 Проверка актуального меню' },
-      { description: '🎉 Учет особых пожеланий (банкет, день рождения)' },
-      { description: '📞 Подготовка предложения по бронированию' }
+      { description: t('chat.process.restaurant.analyzing') },
+      { description: t('chat.process.restaurant.load') },
+      { description: t('chat.process.restaurant.tables') },
+      { description: t('chat.process.restaurant.menu') },
+      { description: t('chat.process.restaurant.special') },
+      { description: t('chat.process.restaurant.booking') }
     ],
     delivery: [
-      { description: '🍕 Обработка заказа на доставку' },
-      { description: '📦 Проверка наличия блюд в меню' },
-      { description: '🏠 Расчет времени доставки по адресу' },
-      { description: '💳 Обработка способа оплаты' },
-      { description: '🛵 Поиск свободного курьера' },
-      { description: '📱 Формирование итогового заказа' }
+      { description: t('chat.process.delivery.analyzing') },
+      { description: t('chat.process.delivery.availability') },
+      { description: t('chat.process.delivery.time') },
+      { description: t('chat.process.delivery.payment') },
+      { description: t('chat.process.delivery.courier') },
+      { description: t('chat.process.delivery.order') }
     ],
     autorepair: [
-      { description: '🔧 Анализ проблемы с автомобилем' },
-      { description: '🚗 Определение модели и года выпуска' },
-      { description: '📋 Проверка наличия запчастей на складе' },
-      { description: '👨‍🔧 Поиск свободного мастера' },
-      { description: '💰 Расчет стоимости работ и запчастей' },
-      { description: '📅 Поиск оптимального времени для записи' }
+      { description: t('chat.process.autorepair.analyzing') },
+      { description: t('chat.process.autorepair.model') },
+      { description: t('chat.process.autorepair.parts') },
+      { description: t('chat.process.autorepair.master') },
+      { description: t('chat.process.autorepair.cost') },
+      { description: t('chat.process.autorepair.booking') }
     ],
     courses: [
-      { description: '📚 Определение уровня английского языка' },
-      { description: '🎯 Анализ целей изучения языка' },
-      { description: '👩‍🏫 Поиск подходящего преподавателя' },
-      { description: '📅 Проверка расписания групп' },
-      { description: '💳 Расчет стоимости курса' },
-      { description: '✅ Формирование предложения по обучению' }
+      { description: t('chat.process.courses.analyzing') },
+      { description: t('chat.process.courses.goals') },
+      { description: t('chat.process.courses.teacher') },
+      { description: t('chat.process.courses.schedule') },
+      { description: t('chat.process.courses.cost') },
+      { description: t('chat.process.courses.proposal') }
     ]
   };
 
@@ -298,27 +298,18 @@ function getProcessTemplates(businessType: string, userMessage: string): { descr
   const processes = [...baseProcesses];
   
   if (lowerMessage.includes('цена') || lowerMessage.includes('стоимость') || lowerMessage.includes('сколько')) {
-    processes.push({ description: '💰 Дополнительный расчет скидок и акций' });
+    processes.push({ description: t('chat.process.discounts') });
   }
   
   if (lowerMessage.includes('срочно') || lowerMessage.includes('быстро')) {
-    processes.push({ description: '⚡ Поиск экстренных слотов' });
+    processes.push({ description: t('chat.process.urgent') });
   }
 
   return processes.slice(0, 4); // Ограничиваем количество процессов
 }
 
-function getFinalMessage(businessType: string): string {
-  const messages = {
-    beauty: '🎉 Клиент успешно записан в салон красоты!',
-    barbershop: '🎉 Клиент успешно записан в барбершоп!',
-    restaurant: '🎉 Столик успешно забронирован в ресторане!',
-    delivery: '🎉 Заказ принят и передан на кухню!',
-    autorepair: '🎉 Клиент записан на ремонт автомобиля!',
-    courses: '🎉 Клиент записан на курсы английского языка!'
-  };
-  
-  return messages[businessType as keyof typeof messages] || messages.beauty;
+function getFinalMessage(businessType: string, t: (key: string) => string): string {
+  return t(`chat.final.${businessType}`) || t('chat.final.beauty');
 }
 
 function isBookingConfirmation(botResponse: string, businessType: string): boolean {
