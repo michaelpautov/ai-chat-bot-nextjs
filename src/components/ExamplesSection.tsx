@@ -40,10 +40,10 @@ export default function ExamplesSection({
         </div>
         
         {/* Example Tabs */}
-        <div className="flex justify-center mb-6 md:mb-8 overflow-x-auto">
-          <div className="bg-gray-100 rounded-lg p-1 inline-flex min-w-max">
+        <div className="flex justify-start sm:justify-center mb-6 md:mb-8 overflow-x-auto px-4">
+          <div className="bg-gray-100 rounded-lg p-1 inline-flex min-w-max ml-0 sm:ml-auto mr-auto">
             <button
-              className={`px-2 sm:px-4 py-2 rounded-md font-medium transition-all text-sm sm:text-base whitespace-nowrap ${
+              className={`pl-4 pr-2 sm:px-4 py-2 rounded-md font-medium transition-all text-sm sm:text-base whitespace-nowrap ${
                 activeExample === 'beauty'
                   ? 'bg-white text-indigo-600'
                   : 'text-gray-600 hover:text-indigo-600'
